@@ -1,0 +1,21 @@
+
+1. Exposing a websocket server to a browser for server push communication
+
+Ans: Gorilla WebSocket because of its API stability and actively maintained packages
+
+2. Parsing an xml file (DOM or SAX, when do you choose which?)
+
+Ans: encoding/xml . Can be used in DOM mode where you ask the library to parse the entire 
+document in one shot into a single object. The SAX functionality is available via Token method.
+If you feed an XML document to the parser and use nothing but the Token method to read it,
+You get a SAX-style parser.
+
+3. An embedded Key Value store which would typically have ~100mb of data and be 99% reads
+
+Ans: Bolt DB by Ben Johnson as it's simple to use, fast and reliable. 
+
+4. A system to auto-discover other instances of a service on the same network
+
+Ans: Netflix Eureka, as its very easy to use and manage. We first register all our clients 
+to the discovery server when they are up. This eases the monitoring of all the servers and 
+their replicas in case we are using a load balancer.
